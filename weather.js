@@ -1,7 +1,9 @@
-const weather = document.querySelector('.js-weather');
+const jsWeather = document.querySelector('.js-weather');
+const jsIcon = document.querySelector('#icon');
 
 const COORDS = 'coords';
 const API_KEY = 'e8c39c5bee66614caae34ca4d66ad016';
+const ICON_URL = 'http://openweathermap.org/img/wn/';
 
 function getWeather(lat, lng) {
   fetch(
@@ -13,7 +15,12 @@ function getWeather(lat, lng) {
     .then(json => {
       const temp = json.main.temp;
       const place = json.name;
-      weather.innerText = `${temp}ºC @${place}`;
+      const country = json.sys.country;
+      const weather = json.weather[0].main;
+      const icon = json.weather[0].icon;
+
+      jsIcon.src = `${ICON_URL}${icon}.png`;
+      jsWeather.innerText = `${weather} ${temp}ºC @${place} ${country}`;
     });
 }
 
@@ -31,12 +38,15 @@ function handleGeoSuccess(position) {
   saveCoords(coordsObj);
   getWeather(latitude, longitude);
 }
+
 function handleGeoError() {
   console.log("Can't access geo location");
 }
+
 function askForCoords() {
   navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoError);
 }
+
 function loadCoords() {
   const loadedCoords = localStorage.getItem(COORDS);
   if (loadedCoords === null) {

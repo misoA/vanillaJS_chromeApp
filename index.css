@@ -1,18 +1,75 @@
 body {
   background-color: rgb(71, 136, 136);
   color: white;
+  font-family: georgia, sans-serif;
 }
 
 h1 {
   color: white;
+  font-size: 100px;
+  text-align: center;
+  margin-top: 4em;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 2px grey;
 }
 
+h4 {
+  font-size: 50px;
+  text-shadow: 1px 1px 1px grey;
+  background-color: white;
+  opacity: 0.5;
+  margin: 0px;
+  text-align: center;
+  color: black;
+}
+
+input {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  border-bottom: 1px solid white;
+  font-size: 30px;
+  font-family: georgia;
+  margin: 10px;
+  color: white;
+}
+
+input::placeholder {
+  color: white;
+  font-style: italic;
+  text-align: center;
+}
+
+.js-clock h4 {
+  font-weight: 100;
+  font-size: 30px;
+}
+
+.todo {
+  text-align: left;
+  margin-left: 43%;
+  margin-top: 0px;
+  font-size: 20px;
+  line-height: 30px;
+}
 .cilcked {
   color: #75b79e;
 }
 
-.btn {
+button {
   cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.js-weather {
+  font-weight: 100;
+  font-style: italic;
+  font-size: small;
+}
+
+.weather-icon {
+  display: inline;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .form,
@@ -22,6 +79,8 @@ h1 {
 
 .showing {
   display: block;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 @keyframes fadeIn {
@@ -37,9 +96,16 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-
   z-index: -1;
   animation: fadeIn 0.5s linear;
+}
+
+.bigWidth {
+  width: 100%;
+  height: auto;
+}
+
+.bigHeight {
+  width: auto;
+  height: 100%;
 }

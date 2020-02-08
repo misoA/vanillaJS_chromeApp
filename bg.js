@@ -1,20 +1,35 @@
 const body = document.querySelector('body');
-const IMG_NUMBER = 3;
 
-function paintImage(imgNumber) {
+const USS_API_KEY =
+  '888aa17ed9a70f756ec6455a367c47d815edecc958d6f34f0c0d93f9fabf78e8';
+
+const URL = `https://api.unsplash.com/photos/random?client_id=${USS_API_KEY}&query=ocean`;
+
+function getImage() {
+  fetch(URL)
+    .then(response => {
+      return response.json();
+    })
+    .then(json => {
+      const image = json.urls.full;
+      paintImage(image);
+    });
+}
+
+function paintImage(imageURL) {
   const image = new Image();
-  image.src = `./images/${imgNumber}.jpg`;
+  image.src = imageURL;
   image.classList.add('bgImage');
+  if (image.offsetWidth / image.offsetHeight < 1.33) {
+    image.classList.add('bigHeight');
+  } else {
+    image.classList.add('bigWidth');
+  }
   body.prepend(image);
 }
 
-function genRandom() {
-  return Math.floor(Math.random() * IMG_NUMBER, 0);
-}
-
 function init() {
-  const randomNumber = genRandom() + 1;
-  paintImage(randomNumber);
+  getImage();
 }
 
 init();

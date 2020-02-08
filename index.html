@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>JS test</title>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="index.css" />
-
-    </head>
-    <body>
-        <div class="js-clock">
-            <h1>00:00</h1>
-        </div>
-        <form class="js-form form">
-            <input type="text" placeholder="What's your name?"/>
-        </form>
-        <h4 class="js-greetings greetings"></h4>
-        <form class="js-toDoForm">
-            <input type="text", placeholder="Write a to do"/>
-        </form>
-        <ul class="js-toDoList">
-        </ul>
-        <span class="js-weather"></span>
-        <script src="clock.js"></script>
-        <script src="greeting.js"></script>
-        <script src="todo.js"></script>
-        <script src="bg.js"></script>
-        <script src="weather.js"></script>
-    </body>
+  <head>
+    <title>JS test</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div>
+      <img id="icon" width="22" height="22" class="weather-icon" />
+      <span class="js-weather"></span>
+    </div>
+    <div class="js-clock">
+      <h1>00:00</h1>
+      <h4>0000-00-00</h4>
+    </div>
+    <form class="js-form form">
+      <input type="text" placeholder="What's your name?" />
+    </form>
+    <h4 class="js-greetings greetings"></h4>
+    <form class="js-toDoForm todo">
+      <input type="text" , placeholder="Write a to do" />
+    </form>
+    <ul class="js-toDoList todo"></ul>
+    <script src="clock.js"></script>
+    <script src="greeting.js"></script>
+    <script src="todo.js"></script>
+    <script src="bg.js"></script>
+    <script src="weather.js"></script>
+  </body>
 </html>
