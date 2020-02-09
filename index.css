@@ -44,8 +44,16 @@ input::placeholder {
   font-size: 30px;
 }
 
-.todo {
+.js-toDoForm {
+  text-align: center;
+}
+
+.js-toDoList {
   text-align: left;
+    margin: 0% 40%;
+}
+
+.todo {
   margin-left: 43%;
   margin-top: 0px;
   font-size: 20px;
