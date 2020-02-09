@@ -3,7 +3,7 @@ const body = document.querySelector('body');
 const USS_API_KEY =
   '888aa17ed9a70f756ec6455a367c47d815edecc958d6f34f0c0d93f9fabf78e8';
 
-const URL = `https://api.unsplash.com/photos/random?client_id=${USS_API_KEY}&query=ocean`;
+const URL = `https://api.unsplash.com/photos/random?client_id=${USS_API_KEY}&query=wallpaper&orientation=landscape&featured`;
 
 function getImage() {
   fetch(URL)
